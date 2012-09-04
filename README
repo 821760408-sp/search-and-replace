@@ -1,0 +1,27 @@
+A simple search and replace program.
+
+It takes a path to a directory of files, a key and a substitution text as arguments,
+and replaces all matched text or pattern in the files by the substitution.
+
+Usage: java sandr [options]
+	
+	options:
+		
+		-rk : indicating key is regex rather than literal text
+		-rs : indicating substitute is regex rather than literal text
+		-c  : indicating key is case sensitive
+		-m  : indicating match key on word boundary rathen than in any substring
+		-o  : indicating write output log file
+	
+	When prompted to enter:	
+		
+		input path: source path containing the files to be processed, absolute or relative
+		
+		output path: path to the file for outputting a list of which files are modified
+		
+		key: text or pattern to be replaced if found in files
+			 e.g. "John Cage" (literal, defalut)
+				  "\s+(John|Nicholas)\s+Cage" (regex, turn flag "-rk" on)
+		
+		substitutition: text or pattern replacing the key
+			 same as key--literal is default, regex when turn on flag "-rs"
